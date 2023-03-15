@@ -4,5 +4,65 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: $c-dark-blue;
+}
+
+html,body,#root{
+    min-height: 100vh;
+    font-family: $ff-baloo;
+    background-color: $c-sky-blue;
+    font-size: $fs-1;
+}
+
+/*
+** Navbar
+*/
+
+#navbar{
+    .nav-container{
+        width: 100vw;
+        height: 4rem;
+        background-color: $c-white;
+        border-bottom: 1px solid rgba(87, 96, 116, 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 5rem;
+
+        font-family: $ff-baloo;
+        color: $c-gray;
+
+        &__links{
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        &__item{
+            text-decoration: none;
+            font-size: $fs-1;
+            font-weight: $fw-5;
+            text-transform: capitalize;
+            color: $c-gray;
+            padding-inline: 2rem;
+            transition: 0.3s;
+
+            &:hover{
+                color: $c-charcol;
+            }
+
+            &:last-child{
+                position: relative;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 0.5em;
+                    height: 0.5rem;
+                    border-radius: 50%;
+                    background-color: $c-yellow;
+                    margin-left: -8px;
+                }
+            }
+        }
+    }
 }

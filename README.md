@@ -9,8 +9,3 @@ Points that count-
 dividing and naming of components with proper naming convention.
 code quality and reusable components.
 writing bug free code is a bonus.
-
-# Font awesome icons
---> 
-
-# Images Links
