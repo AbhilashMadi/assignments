@@ -8,7 +8,9 @@ function Navbar() {
   return (
     <header id="navbar">
       <div className="nav-container">
-        <img src={logo} alt="FickleFlight" className="nav-container__img" />
+        <Link to="/">
+          <img src={logo} alt="FickleFlight" className="nav-container__img" />
+        </Link>
 
         <nav className="nav-container__links">
           <Link to="/explore" className="nav-container__item">

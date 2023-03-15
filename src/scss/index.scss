@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-html,body,#root{
+body{
     min-height: 100vh;
     font-family: $ff-baloo;
     background-color: $c-sky-blue;
@@ -26,6 +26,7 @@ html,body,#root{
 
         display: flex;
         align-items: center;
+        flex-flow: flex wrap;
         justify-content: space-between;
         padding-inline: 5rem;
 
@@ -62,6 +63,84 @@ html,body,#root{
                     background-color: $c-yellow;
                     margin-left: -8px;
                 }
+            }
+        }
+    }
+}
+
+/*
+** Footer
+*/
+
+#footer{
+    .footer-section{
+        font-family: $ff-poppins;
+        background-image: $g-blue;
+        // height: 13rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 2rem 5rem;
+    }
+
+    .footer-division-one{
+        width: 30%;
+
+        &__description{
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            line-height: 2;
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 0.8rem;
+            
+            li{
+                background-color: $c-white;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                @include flex-center;
+                transition: 0.3s;
+                
+                &:hover{
+                background-image: $g-blue;
+                color: $c-white;
+                }
+            }
+        }
+    }
+
+    .section-dividor__vertical{
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-divison-two{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap: 4rem;
+
+        div>h4{
+            font-family: $ff-baloo;
+            color: $c-white;
+            font-weight: $fw-5;
+            font-size: 1.2rem;
+        }
+
+        div>ul{
+            list-style: none;
+            color: $c-sky-blue;
+            font-size: 0.8rem;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.7);
+            
+            li:hover{
+                color: rgba(255, 255, 255, 1);
             }
         }
     }
