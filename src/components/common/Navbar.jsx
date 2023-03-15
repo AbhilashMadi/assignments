@@ -19,10 +19,10 @@ function Navbar() {
           <Link to="/search" className="nav-container__item">
             Search
           </Link>
-          <Link to="/Hotels" className="nav-container__item">
+          <Link to="/hotels" className="nav-container__item">
             Hotels
           </Link>
-          <Link to="/Offers" className="nav-container__item">
+          <Link to="/offers" className="nav-container__item">
             Offers
           </Link>
           <Link to="/notifications" className="nav-container__item">
