@@ -9,3 +9,6 @@ Points that count-
 dividing and naming of components with proper naming convention.
 code quality and reusable components.
 writing bug free code is a bonus.
+
+![screen shot one](../fickle_flight/src/assets/SS/ss-1.png);
+![screen shot one](../fickle_flight/src/assets/SS/ss-2.png);
