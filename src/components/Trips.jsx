@@ -1,37 +1,45 @@
-import React from "react";
+import React,{useState, useMemo} from "react";
 import { CarouselCard,RecommendedCard } from "./exports";
 import travelSitesData from "../utils/json.js"
 import Slider from "react-slick";
 
 import {Link} from "react-router-dom";
+import useWindowResize from "../utils/hooks/useWindowResize";
 
 function Trips(){
+
+  const [slides, setSlides] = useState(5.5);
+  const {width} = useWindowResize();
+
+  const setSlidsToShow = () => {
+    if(width<1400 && width>=1200){
+      return 4.5;
+    } else if(width < 1000 && width >= 800){
+      return 3;
+    } else if(width < 600){
+      return 1;
+    }
+  }
+
+
+  useMemo(() => setSlides(setSlidsToShow() ?? 5), [width]);
 
   const settings_trips = {
     className: "center",
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 5.25,
+    slidesToShow: (slides ?? 1),
     swipeToSlide: true,
-    // afterChange: function (index) {
-    //   console.log(
-    //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-    //   );
-    // },
   };
 
   const settings_recommendation = {
     className: "center",
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 6,
+    slidesToShow: (slides ?? 5),
     swipeToSlide: true,
-    // afterChange: function (index) {
-    //   console.log(
-    //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-    //   );
-    // },
   };
+
 
 
   return (

@@ -11,6 +11,7 @@ body{
     font-family: $ff-baloo;
     background-color: $c-sky-blue;
     font-size: $fs-1;
+    overflow-x: hidden;
 }
 
 /*
@@ -33,6 +34,15 @@ body{
         font-family: $ff-baloo;
         color: $c-gray;
 
+        
+        @media screen and (max-width:600px){
+            padding-inline: 2rem;
+            
+            &__img{
+                height: 2rem;
+            }
+        }
+        
         &__links{
             display: flex;
             flex-flow: row wrap;
@@ -80,7 +90,6 @@ body{
     gap: 2rem;
 
     .footer_section-one{
-        // border: 1px dashed black;
 
         width: 30%;
 
@@ -246,12 +255,13 @@ body{
 */
 
 .recommended-card{
-    width: 16rem;
+    width: 17rem;
     height: 21.5rem;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
     background-color: $c-white;
+    border: 1px solid rgba($c-gray,0.2);
     
     &__img-container{
         width: 100%;
@@ -304,6 +314,7 @@ body{
 */
 
 .trips-showcase{
+    width: 100%;
     &__headings{
         font-family: $ff-poppins;
         display: flex;
@@ -334,19 +345,101 @@ body{
 
     &__recommended > &__headings{
         margin-block: 3rem 1.5rem;
+        h1{
+            font-weight: 600;
+        }
+    }
+}
+
+.landing-page{
+    padding: 5rem;
+
+    @media screen and (max-width:600px){
+        padding: 2rem;
     }
 }
 
 /*
 ** Form
 */
+.newsletter-form{
+    font-family: $ff-poppins;
+    color: $c-charcol;
 
+    display: flex;
+    flex-direction: column;
+    
+    &__headings{
+        text-align: center;
+        margin-block: 3rem 2rem;
+        h4{
+            color: $c-dark-blue;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-weight: 600;
+        }
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        background-color: $c-white;
+        padding: 1.5rem;
+        border-radius: 10px;
+
+        label{
+            font-weight: 300;
+            font-size: 0.8rem;
+        }
+
+        .input{
+            padding-block: 0.8rem;
+            border:1px solid rgba($c-gray,0.3);
+            border-radius: 3px;
+
+            &:focus,&:active,&:hover{
+                outline: none;
+            }
+        }
+
+        .input::placeholder{
+            font-family: $ff-poppins;
+            text-indent: 3rem;
+            opacity: 0.7;
+
+        }
+
+        .input:first-of-type{
+            margin-block: 1rem 0.8rem;
+        }
+
+        .input:last-of-type{
+            margin-block: 0rem 1rem;
+        }
+
+        button{
+            width: 10rem;
+            height: 2.5rem;
+
+            outline: none;
+            border: none;
+            background-color: $c-yellow;
+            color: $c-white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+
+            &:active{
+                scale: 0.98;
+            }
+        }
+    }
+}
 
 
 /*
 ** Landing Page
 */
-
-.landing-page{
-    padding: 5rem;
-}

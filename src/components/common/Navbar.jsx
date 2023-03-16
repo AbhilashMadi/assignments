@@ -13,6 +13,9 @@ function Navbar() {
         </Link>
 
         <nav className="nav-container__links">
+          <Link to="/" className="nav-container__item">
+            Home
+          </Link>
           <Link to="/explore" className="nav-container__item">
             Explore
           </Link>
