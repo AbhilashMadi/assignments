@@ -125,80 +125,102 @@ body,
 .dashbord__forms{
     padding: 2rem;
     overflow-y: scroll;
+
+    .co-workers{
+        font-family: $ff-nunito;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        
+        .angle{
+            margin-right:1rem;
+            color: $c-charcol-black;
+        }
+    }
 }
 
 .invite-form{
-    background-color: $c-pure-white;
-    box-shadow: $bs-one;
-    font-family: $ff-nunito;
-    width: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    padding: 2rem;
-    gap: 1rem;
-    border-radius: 10px;
-    
-    &__addUser{
-        display: flex;
-        flex-flow: row wrap;
-        gap: 1rem;
-        
-        input[type="email"]{
-            font-size: 1.02rem;
-            width: 40%;
-            height: 2.8rem;
-            border: none;
-            background-color: $c-gray;
-            border-radius: 5px;
-            text-indent: 10px;
+   background-color: $c-pure-white;
+   width: 100%;
+   padding: 1.5rem;
+   display: flex;
+   flex-flow: column wrap;
+   border-radius: 8px;
+   box-shadow: $bs-one;
+   gap: 1rem;
+   font-family: $ff-nunito;
+   font-size: 1.02rem;
 
-            ::placeholder{
-                color: $c-ash-black;
-                font-family: $ff-nunito;
+   .buttons{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    &__add-more{
+        background: none;
+        border:none;
+        font-family: $ff-nunito;
+        font-size: 1.02rem;
+        color: $c-light-blue;
+
+        &:is(:active,:focus){
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__send-invite{
+        padding: 0.6rem;
+        border:none;
+        font-size: 1.02rem;
+        font-family: $ff-nunito;
+        background-color: $c-light-blue;
+        color:$c-pure-white;
+        border-radius:5px;
+
+        &:is(:active){
+            outline: none;
+            scale: 0.98;
+        }
+    }
+   }
+
+   &__addUser{
+    display: flex;
+    justify-content: flex-start;
+    gap:1rem;
+
+        input[type="email"]{
+            background-color: $c-gray;
+            border:none;
+            font-family: $ff-nunito;
+            font-size: 1rem;
+            padding: 0.8rem;
+            border-radius: 5px;
+            width: 30%;
+
+            &:is(:active,:focus,:hover){
+                border:none;
+                outline: none;
             }
 
-            &:is(:active,:focus){
-            outline: none;
-            border: none;
+            &::placeholder{
+                font-family: $ff-nunito;
             }
         }
 
         select{
-            width: 10%;
-            font-size: 1.02rem;
-            font-family: $ff-nunito;
-            color:$c-charcol-black;
-            text-transform: capitalize;
-            padding-inline: 1rem;
-            border-radius: 5px;
-            border: none;
+            border:none;
             background-color: $c-gray;
-
-            &:is(:active,:focus){
-            outline: none;
-            }
-
-        }
-
-        .add-btn{
-            background-color: $c-light-blue;
-            border: none;
             border-radius: 5px;
-            padding-inline: 1rem;
-            color: $c-pure-white;
+            padding-inline:1rem;
             font-family: $ff-nunito;
-            font-size: 1.02rem;
+            font-size: 1rem;
 
-            &:is(:active){
+            &:is(:active,:focus,:hover){
+                border: none;
                 outline: none;
-                scale: 0.98;
             }
         }
-
-    }
-
-    .add-more{
-        font-family: $ff-nunito;
-        color: $c-light-blue;
     }
 }
+
