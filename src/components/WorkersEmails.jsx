@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useContext} from 'react'
+
+import { membersContext } from "../Context/MembersContextProvider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt,faRedo } from "@fortawesome/free-solid-svg-icons";
 
 function WorkersEmails() {
+  const context = useContext(membersContext);
+  console.log(context.members)
   return (
     <section
       className="mails-container"
@@ -19,17 +23,26 @@ function WorkersEmails() {
           </tr>
         </thead>
         <tbody>
-        
-          <tr>
-            <td>abhilash</td>
-            <td>admin</td>
-            <td>
-              <FontAwesomeIcon icon={faTrashAlt} />
-            </td>
-            <td>
-              <FontAwesomeIcon icon={faRedo} />
-            </td>
-          </tr>
+          {
+            context.members.map((member) => {
+              return (
+                <tr key={member.id}>
+                  <td>{member.mail}</td>
+                  <td>{member.type}</td>
+                  <td>
+                    {member.mail !== "" && (
+                      <FontAwesomeIcon icon={faTrashAlt} />
+                    )}
+                  </td>
+                  <td>
+                    {member.mail !== "" && (
+                      <FontAwesomeIcon icon={faRedo} />
+                    )}
+                  </td>
+                </tr>
+              );
+            })
+          }
         </tbody>
       </table>
     </section>

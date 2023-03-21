@@ -1,6 +1,6 @@
 import React from 'react'
 
-function UserReducer(state,action) {
+function reducer(state,action) {
   const {type,payload} = action;
 
   switch(type){
@@ -17,4 +17,4 @@ function UserReducer(state,action) {
     }
 }
 
-export default UserReducer;
+export default reducer;

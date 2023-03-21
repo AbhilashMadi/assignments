@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from "react";
+import {membersContext} from "../Context/MembersContextProvider";
 
 function InviteMember() {
+  const context = useContext(membersContext);
+
   const [invites, setInvites] = useState([
     { id: Date.now(), mail: "", type: "" }
   ]);
@@ -23,9 +26,14 @@ function InviteMember() {
       setInvites([...invites, { id: Date.now(),mail: "", type: "" }]);
     }
 
+    useEffect(() => {
+      context.setMembers(invites);
+    },[])
+
     function handleSendInvite() {
-      console.log(invites);
-      // TODO: send invite
+      // console.log(invites);
+      context.setMembers(invites)
+      // console.log(context.members)
     }
 
   return (

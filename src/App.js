@@ -1,14 +1,16 @@
 import React from 'react';
 import {SideBar,InviteMember,WorkersEmails} from "./components/exports";
-import {Context} from "./Context/UsersContext";
+
+import {MembersContextProvider} from "./Context/MembersContextProvider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faAngleLeft} from "@fortawesome/free-solid-svg-icons";
 
+
 function App() {
   return (
     <main className="dashbord">
-      <Context>
+      <MembersContextProvider>
         <SideBar />
         <div className="dashbord__forms">
           <div className="co-workers">
@@ -18,7 +20,7 @@ function App() {
           <InviteMember />
           <WorkersEmails/>
         </div>
-      </Context>
+      </MembersContextProvider>
     </main>
   );
 }
