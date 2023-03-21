@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useCallback, useContext, useEffect, useState} from 'react'
 
 import { membersContext } from "../Context/MembersContextProvider";
 
@@ -7,7 +7,20 @@ import { faTrashAlt,faRedo } from "@fortawesome/free-solid-svg-icons";
 
 function WorkersEmails() {
   const context = useContext(membersContext);
-  console.log(context.members)
+  const [users,setUsers] = useState([...context.members])
+
+  useEffect(() => {
+    setUsers([...context.members]);
+  },[context.members])
+
+  const handleRemove = useCallback(
+    (id) => {
+      const updatedUsers = users.filter((item) => item.id !== id);
+      setUsers(updatedUsers);
+    },
+    [users]
+  );
+
   return (
     <section
       className="mails-container"
@@ -23,26 +36,30 @@ function WorkersEmails() {
           </tr>
         </thead>
         <tbody>
-          {
-            context.members.map((member) => {
-              return (
-                <tr key={member.id}>
-                  <td>{member.mail}</td>
-                  <td>{member.type}</td>
-                  <td>
-                    {member.mail !== "" && (
-                      <FontAwesomeIcon icon={faTrashAlt} />
-                    )}
-                  </td>
-                  <td>
-                    {member.mail !== "" && (
+          {users.map((member) => {
+            return (
+              <tr key={member.id}>
+                <td>{member.mail}</td>
+                <td>{member.type}</td>
+                {member.mail && (
+                  <React.Fragment>
+                    <td title="remove">
+                      <FontAwesomeIcon
+                        icon={faTrashAlt}
+                        onClick={() => {
+                          handleRemove(member.id);
+                        }}
+                        role="button"
+                      />
+                    </td>
+                    <td title="resend">
                       <FontAwesomeIcon icon={faRedo} />
-                    )}
-                  </td>
-                </tr>
-              );
-            })
-          }
+                    </td>
+                  </React.Fragment>
+                )}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </section>
