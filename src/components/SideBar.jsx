@@ -44,7 +44,7 @@ function SideBar() {
         <nav className="sidebar__navigation">
           {menuItems.map(({ text, icon }) => {
             return (
-              <Link to="/" className="nav-item">
+              <Link to="/" className="nav-item" key={text}>
                 <FontAwesomeIcon icon={icon} />
                 {isExpanded && <p>{text}</p>}
               </Link>

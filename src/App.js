@@ -1,9 +1,15 @@
 import React from 'react';
-import SideBar from "./components/SideBar";
+import {SideBar,InviteMember} from "./components/exports";
+import {Context} from "./Context/UsersContext";
 
 function App() {
   return (
-    <div><SideBar/></div>
+    <main className="dashbord">
+      <SideBar/>
+      <div className="dashbord__forms">
+        <InviteMember/>
+      </div>
+    </main>
   )
 }
 
