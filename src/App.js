@@ -1,5 +1,5 @@
 import React from 'react';
-import {SideBar,InviteMember} from "./components/exports";
+import {SideBar,InviteMember,WorkersEmails} from "./components/exports";
 import {Context} from "./Context/UsersContext";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +16,7 @@ function App() {
             <span>Co-Workers</span>
           </div>
           <InviteMember />
+          <WorkersEmails/>
         </div>
       </Context>
     </main>

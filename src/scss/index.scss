@@ -224,3 +224,48 @@ body,
     }
 }
 
+/*
+** /////// ADDED MAILS
+*/
+
+.mails-container{
+    font-family: $ff-nunito;
+    background-color: $c-pure-white;
+    margin-block: 2rem;
+    border-radius: 8px;
+    box-sizing: $bs-one;
+    padding: 1.5rem;
+    width: 100%;
+
+    table {
+        font-family: $ff-nunito;
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: none;
+    }
+
+    thead{
+        background-color: $c-gray;
+        color: $c-charcol-black;
+    }
+
+    td:nth-child(3),
+    td:nth-child(4) {
+        color: $c-light-blue;
+        cursor: pointer;
+    }
+
+    // td{
+    //     border-bottom: 1px solid $c-gray;
+    // }
+    
+    td, th {
+        // border: 1px solid $c-gray;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    // tr:nth-child(even) {
+    //     background-color: $c-gray;
+    // }
+}
