@@ -12,16 +12,29 @@ html,
 body,
 #root{
     background-color:  $c-ash-white;
+    max-height: 100vh;
     font-size: 16px;
     font-family: $ff-nunito;
 }
 
+/*
+** ///// SCROLL
+*/
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: $c-ash;
+}
 /*
 ** /////////// SIDE BAR
 */
 
 .sidebar{
     &__container{
+        position: fixed;
         background-color: $c-dark-blue;
         min-height: 100vh;
         // width: 23rem;
@@ -86,6 +99,7 @@ body,
     }
 
     &__navigation{
+
         .nav-item{
             @include flex-center;
             justify-content: flex-start;
@@ -124,7 +138,6 @@ body,
 
 .dashbord__forms{
     padding: 2rem;
-    overflow-y: scroll;
 
     .co-workers{
         font-family: $ff-nunito;
