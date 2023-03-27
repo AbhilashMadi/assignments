@@ -1,9 +1,6 @@
 
-const key = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_KEY;
 
-const endPoint = {
-    key,
-    baseUrl:"",
-}
+const config = (country,category) => `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`
 
-export default endPoint;
+export default config;

@@ -28,10 +28,45 @@
     --fw-6: 600;
 }
 
-body{
-    background-color: var(--c-background);
-    font-family: var(--ff-roboto);
-    font-size: 16px;
-    min-height: 100vh;
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+@mixin grid-center{
+  display: grid;
+  place-items: center;
+}
+
+body{
+    background-color: var(--c-pure);
+    font-family: var(--ff-roboto);
+    font-size: 16px;
+    @include grid-center;
+}
+
+.app{
+  background-color: blue;
+  background-color: var(--c-background);
+  overflow-x: hidden;
+  width: 60vw;
+  transition: 0.2s ease-in-out;
+
+  @media screen and (max-width: 1199px){
+    width: 80vw;
+  }
+
+  @media screen and (max-width: 767px){
+    width: 100vw;
+  }
+
+  @media screen and (max-width: 580px){
+    width: 100vw;
+  }
+}
+
+
+.landing{
+  height: 100vh;
+}

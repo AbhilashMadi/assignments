@@ -1,0 +1,155 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 4rem;
+  font-family: var(--ff-roboto);
+  color: var(--c-text);
+  position: relative;
+  text-transform: capitalize;
+  // border-bottom: 1px solid #bfbfbf;
+  background-color: #eaeaea;
+  
+  &__container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 2rem;
+  }
+  
+  &__logo{
+    font-family: var(--ff-roboto-serif);
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: var(--fw-6);
+    text-decoration: none;
+    color: var(--c-text);
+  }
+
+  &__list{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1.2rem
+  }
+
+  &__item{
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    
+    &:hover{
+      transform: translateY(-5px);
+    }
+  }
+  
+  &__search{
+    transition: transform 0.2s ease-in-out;
+    color: var(--c-text);
+    background-color: transparent;
+    border:none;
+    outline: none;
+    cursor: pointer;
+
+    &:is(:active,:focus){
+      outline: none;
+    }
+    
+    &:hover{
+      transform: translateY(-5px);
+    }
+
+  }
+
+  &__action{
+    display: none;
+  }
+}
+
+@media screen and (max-width:820px){
+  .navbar{
+    &__logo{
+      font-size: 1.2rem;
+    }
+
+    &__item{
+      display: none;
+    }
+
+    &__action{
+      display: block;
+      background-color: transparent;
+      border: none;
+      transition: transform 0.2s ease-in-out;
+
+      &:is(:active,:focus){
+        outline: none;
+      }
+
+      &:hover{
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
+
+
+/*
+-- TOGGLE MENU
+*/
+
+.action-menu{
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 99;
+  background-color: var(--c-asscent);
+  width: 70%;
+  min-height: 100vh;
+  font-family: var(--ff-roboto);
+  padding:2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width:820px){
+    display: none;
+  }
+
+  &__actions{
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--c-pure);
+
+    img{
+      cursor: pointer;
+    }
+
+    button{
+      border: none;
+      background-color: rgba(255,255,255,0.5);
+      padding: 0.4rem;
+    }
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    list-style: none;
+  }
+
+  &__item{ 
+    text-decoration: none;
+    color: var(--c-pure);
+  }
+
+}
