@@ -8,12 +8,13 @@
   height: 20rem;
   transition: transform 0.2s ease-in-out;
   margin-top: 1rem;
-
+  
   &:hover{
     transform: translateY(-10px);
   }
   
   &__container{
+    // border-top: 5px solid var(--c-asscent);
     width: 100%;
     height: 100%;
     border-radius: 0.625rem;

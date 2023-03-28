@@ -47,7 +47,6 @@ body{
 }
 
 .app{
-  background-color: blue;
   background-color: var(--c-background);
   overflow-x: hidden;
   width: 60vw;
@@ -71,6 +70,10 @@ body{
 .landing{
   min-height: 100vh;
   margin: 2rem;
-  padding: 1rem;
-  border: 1px solid blue;
+  // padding: 1rem;
+  // border: 1px solid blue;
+
+  @media screen and (max-width:700px) {
+    margin: 1rem 1rem;
+  }
 }
