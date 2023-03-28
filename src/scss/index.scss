@@ -52,21 +52,25 @@ body{
   overflow-x: hidden;
   width: 60vw;
   transition: 0.2s ease-in-out;
-
+  
   @media screen and (max-width: 1199px){
     width: 100vw;
   }
-
+  
   @media screen and (max-width: 767px){
     width: 100vw;
   }
-
+  
   @media screen and (max-width: 580px){
     width: 100vw;
   }
 }
 
+//-------need change margin
 
 .landing{
-  height: 100vh;
+  min-height: 100vh;
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid blue;
 }

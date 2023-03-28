@@ -4,12 +4,14 @@ import { requestManager } from '../helpers/export.js';
 import ACTIONS from '../context/actions';
 import config from '../config';
 
+import { ScrollCard } from '../components/export';
+
 const { FETCH_DATA } = ACTIONS;
 
 function Landing() {
   const {dispatch,state} = useContext(DataContext);
   const [loading,setLoading] = useState(false);
-  const [query,setQuery] = useState({country:'us',category:'technology'})
+  const [query,setQuery] = useState({country:'in',category:'business'})
 
   const API_URL = config(query.country,query.category);
 
@@ -27,11 +29,11 @@ function Landing() {
     fetchData(API_URL)
   },[API_URL]);
 
-  return(
+  return (
     <main className='landing'>
-      main Landing
+      <ScrollCard query={query} />
     </main>
-  )
+  );
 }
 
 export default Landing;
