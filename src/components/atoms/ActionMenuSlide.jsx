@@ -15,25 +15,25 @@ function ActionMenuSlide({ showMenu, setShowMenu, toggleMenu }) {
       </div>
       <ul className='action-menu__list'>
         <li className='action-menu__item'>
-          <i class='fa fa-film' aria-hidden='true'></i>
+          <i className='fa fa-film' aria-hidden='true'></i>
           <Link className='link' to='#'>
             Films
           </Link>
         </li>
         <li className='action-menu__item'>
-          <i class='fa fa-rss' aria-hidden='true'></i>
+          <i className='fa fa-rss' aria-hidden='true'></i>
           <Link className='link' to='#'>
             popular
           </Link>
         </li>
         <li className='action-menu__item'>
-          <i class='fa fa-fire' aria-hidden='true'></i>
+          <i className='fa fa-fire' aria-hidden='true'></i>
           <Link className='link' to='#'>
             trending
           </Link>
         </li>
         <li className='action-menu__item'>
-          <i class='fa fa-graduation-cap' aria-hidden='true'></i>
+          <i className='fa fa-graduation-cap' aria-hidden='true'></i>
           <Link className='link' to='#'>
             education
           </Link>
@@ -41,13 +41,13 @@ function ActionMenuSlide({ showMenu, setShowMenu, toggleMenu }) {
       </ul>
       <div className='action-menu__social' aria-label='social media links'>
         <Link to='/' className='link'>
-          <i class='fa fa-facebook-square' aria-hidden='true'></i>
+          <i className='fa fa-facebook-square' aria-hidden='true'></i>
         </Link>
         <Link to='/' className='link'>
-          <i class='fa fa-instagram' aria-hidden='true'></i>
+          <i className='fa fa-instagram' aria-hidden='true'></i>
         </Link>
         <Link to='/' className='link'>
-          <i class='fa fa-twitter-square' aria-hidden='true'></i>
+          <i className='fa fa-twitter-square' aria-hidden='true'></i>
         </Link>
       </div>
     </nav>

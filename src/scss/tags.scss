@@ -1,0 +1,39 @@
+.tags{
+  margin: 2rem 0;
+
+  &__btn{
+    background-color: var(--c-pure);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 6rem;
+    width: 12rem;
+    margin-right: 1rem;
+    font-size: large;
+    text-transform: capitalize;
+    transition: all 0.3 ease-in-out;
+    border-radius: 10px;
+    border-top: 0.2rem solid var(--c-asscent);
+
+    &:is(:active,:focus){
+      outline: none;
+    }
+  }
+
+  &__selected{
+    background-color: var(--c-asscent);
+    color: var(--c-pure);
+    border-top: 0.2rem solid var(--c-pure);
+  }
+
+  @media screen and (max-width:600px) {
+    &__btn{
+      width: 6rem;
+      height: auto;
+      padding-block: 0.8rem;
+      font-size: 0.8rem;
+      border-radius: 50px;
+      border-top: none;
+    }
+  }
+}

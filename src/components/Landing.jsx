@@ -4,7 +4,7 @@ import { requestManager } from '../helpers/export.js';
 import ACTIONS from '../context/actions';
 import config from '../config';
 
-import { ScrollCard } from '../components/export';
+import { ScrollCard,Tags } from '../components/export';
 
 const { FETCH_DATA } = ACTIONS;
 
@@ -14,6 +14,10 @@ function Landing() {
   const [query,setQuery] = useState({country:'in',category:'business'})
 
   const API_URL = config(query.country,query.category);
+
+  /* search url
+  https://newsapi.org/v2/everything?q=bitcoin&apiKey=6f02a21dd20f4853939d7e9029dad380
+  */
 
   const fetchData = (url) => {
     setLoading(true)
@@ -32,6 +36,7 @@ function Landing() {
   return (
     <main className='landing'>
       <ScrollCard query={query} />
+      <Tags setQuery={setQuery} query={query} />
     </main>
   );
 }

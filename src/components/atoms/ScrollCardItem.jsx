@@ -6,8 +6,6 @@ function ScrollCardItem({article,query}) {
   const {author,content,description,publishedAt,source,title,url,urlToImage} = article;
   const {country,category} = query;
 
-  console.log(publishedAt)
-
   return (
     <div className='scroll-card'>
       <div
@@ -15,7 +13,7 @@ function ScrollCardItem({article,query}) {
         style={{ backgroundImage: `url(${urlToImage})` }}>
         <div className='scroll-card__category'>
           <span>{category}</span>
-          <i class='fa fa-bookmark' aria-hidden='true'></i>
+          <i className='fa fa-bookmark' aria-hidden='true'></i>
         </div>
         <Link to={url} className='link' target='_blank'>
         <div className='scroll-card__content'>
@@ -27,7 +25,7 @@ function ScrollCardItem({article,query}) {
           <div className='source'>
             <p>
               {author}
-              <i class='fa fa-circle' aria-hidden='true'></i>
+              <i className='fa fa-circle' aria-hidden='true'></i>
               {source.name}
             </p>
           </div>
