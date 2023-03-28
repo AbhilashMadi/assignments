@@ -4,7 +4,7 @@ import { requestManager } from '../helpers/export.js';
 import ACTIONS from '../context/actions';
 import config from '../config';
 
-import { ScrollCard,Tags } from '../components/export';
+import { ScrollCard,Tags,FeedCard } from '../components/export';
 
 const { FETCH_DATA } = ACTIONS;
 
@@ -37,6 +37,7 @@ function Landing() {
     <main className='landing'>
       <ScrollCard query={query} />
       <Tags setQuery={setQuery} query={query} />
+      <FeedCard articles={state.articles}/>
     </main>
   );
 }
