@@ -62,7 +62,6 @@ function Landing() {
       <ScrollCard query={query} />
       <Tags setQuery={setQuery} query={query} />
       <FeedCard articles={state.articles} />
-      <SlideCard />
       <div>
         {explore && (
           <button className={`explore-btn ${atBottom && 'up'}`} onClick={() => setExplore(!explore)}>
@@ -71,6 +70,7 @@ function Landing() {
           </button>
         )}
       </div>
+      <SlideCard />
     </main>
   );
 }
