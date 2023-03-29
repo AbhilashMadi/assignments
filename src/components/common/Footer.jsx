@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+
+import "../../scss/css/footer.css";
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <footer className='footer'>
+      <p> &#169; zintlr news {
+        new Date().getFullYear()}
+      </p>
+    </footer>
   )
 }
 
