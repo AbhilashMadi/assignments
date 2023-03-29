@@ -1,0 +1,91 @@
+.link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.feed-card{
+  background-color: var(--c-pure);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: var(--bs-card);
+
+  width: 100%;
+  height: 12rem;
+  margin-block: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media screen and (max-width:600px){
+      padding:0.8rem;
+  }
+
+  &__content{
+    width: 70%;
+
+    @media screen and (max-width:600px){
+      width: 63%;
+    }
+  }
+
+  &__timeline{
+    font-size: 0.8rem;
+    color: var(--c-text-light);
+  }
+
+  &__heading{
+    font-size: 1.2rem;
+    margin-block: 0.8rem 0.5rem;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__description{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    color: var(--c-ash);
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__details{
+    color: var(--c-text-light);
+    .author{
+      color: var(--c-asscent);
+    }
+
+    i{
+      font-size: 0.4rem;
+      margin-inline: 0.2rem;
+    }
+
+    .srource{
+      color: var(--c-text-light);
+    }
+  }
+
+
+
+  &__img{
+    width: 25%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+
+    @media screen and (max-width:600px){
+      width: 35%;
+    }
+  }
+}
