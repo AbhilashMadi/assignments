@@ -1,0 +1,122 @@
+
+.link{
+    text-decoration: none;
+    color: inherit;
+    z-index: 20;
+}
+
+.slides-container{
+  opacity: 0;
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: none;
+  transition: position 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+
+}
+
+.pop-up-card{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--c-pure);
+
+    position: relative;
+    padding: 1rem;
+
+    &::after{
+        content:"";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: var(--g-bottom);
+        top:0;
+        left:0;
+        z-index: 5;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__actions{
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0;
+        z-index: 15;
+        
+        div{
+            display: flex;
+            gap:1rem;
+        }
+
+        .btn{
+            border:none;
+            background: transparent;
+        }
+
+        .badge{
+            background-color: rgba(255,255,255,0.5);
+            color:var(--c-deco);
+            text-transform: capitalize;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+    }
+
+    &__content{
+        margin-bottom: 2rem;
+        font-family: var(--c-roboto);
+
+        .published{
+            color: var(--c-asscent);
+            margin-bottom: 1rem;
+        }
+
+        .heading{
+            word-break:keep-all;
+            text-overflow: ellipsis;
+            margin-bottom: 0.5rem;
+        }
+
+        .para{
+            font-weight: 300;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__details{
+        font-size: 1rem;
+        color: var(--c-asscent);
+
+        i{
+            margin-inline: 0.3rem;
+            color: var(--c-pure);
+            font-size: 0.4em;
+        }
+
+        span:last-child{
+            color: var(--c-pure);
+        }
+    }
+}
+
+
+.slides-container.up {
+  display: block;
+}
+
+@media screen and (max-width:767px) {
+    .slides-container{
+        opacity: 1;
+    }
+}

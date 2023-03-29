@@ -15,7 +15,7 @@ function Landing() {
   const {dispatch,state} = useContext(DataContext);
   const [loading,setLoading] = useState(false);
   const [query,setQuery] = useState({country:'in',category:'business'})
-  const [explore,setExplore] = useState(true);
+  const [explore,setExplore] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
   
   const API_URL = config(query.country,query.category);
@@ -55,23 +55,32 @@ function Landing() {
     };
   }, []);
 
-  console.log(atBottom)
-
   return (
-    <main className='landing'>
-      <ScrollCard query={query} />
-      <Tags setQuery={setQuery} query={query} />
-      <FeedCard articles={state.articles} />
-      <div>
-        {explore && (
-          <button className={`explore-btn ${atBottom && 'up'}`} onClick={() => setExplore(!explore)}>
-            <img src={expIco} alt='explore' />
-            Explore
-          </button>
+    <div>
+      <main className='landing'>
+        <ScrollCard query={query} />
+        <Tags setQuery={setQuery} query={query} />
+        <FeedCard articles={state.articles} />
+        <div>
+          {!explore && (
+            <button
+              className={`explore-btn ${atBottom && 'up'}`}
+              onClick={() => setExplore(!explore)}>
+              <img src={expIco} alt='explore' />
+              Explore
+            </button>
+          )}
+        </div>
+          {explore && (
+          <SlideCard
+            explore={explore}
+            setExplore={setExplore}
+            articles={state.articles}
+            query={query}
+          />
         )}
-      </div>
-      <SlideCard />
-    </main>
+      </main>
+    </div>
   );
 }
 

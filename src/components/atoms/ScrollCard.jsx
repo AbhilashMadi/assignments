@@ -12,7 +12,7 @@ function ScrollCard({query}) {
         dots: false,
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 2,
         autoPlay: true,
         autoplay: true,
         speed: 1000,
