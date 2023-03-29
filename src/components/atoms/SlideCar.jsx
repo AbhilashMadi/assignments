@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import "../../scss/css/slidecard.css";
 
 function SlideCar() {
   return (
-    <div>SlideCar</div>
-  )
+    <div></div>
+  );
 }
 
-export default SlideCar
+export default SlideCar;

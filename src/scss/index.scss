@@ -50,6 +50,7 @@ body{
   background-color: var(--c-background);
   overflow-x: hidden;
   width: 60vw;
+  height: 100%;
   transition: 0.2s ease-in-out;
   
   @media screen and (max-width: 1199px){
@@ -68,7 +69,8 @@ body{
 //-------need change margin
 
 .landing{
-  min-height: 100vh;
+  position: relative;
+  // height: 100%;
   margin: 2rem;
   // padding: 1rem;
   // border: 1px solid blue;

@@ -51,9 +51,7 @@ function Tags({query,setQuery}){
 };
 
 const [selected, setSelected] = useState(1);
-console.log(selected)
 //for now just I am updatin the category only;
-console.log(query)
 
 const handleClick = (e) => {
     if(e.target.value === 'all'){
@@ -67,11 +65,15 @@ const handleClick = (e) => {
       <Slider {...settings}>
         {categorys.map((topic, index) => {
           return (
-            <div>
+            <div key={index}>
               <button
-                className={`tags__btn ${selected === index ? "tags__selected" : ""}`}
-                key={index}
-                onClick={(e) => {handleClick(e);setSelected(index)}}
+                className={`tags__btn ${
+                  selected === index ? 'tags__selected' : ''
+                }`}
+                onClick={(e) => {
+                  handleClick(e);
+                  setSelected(index);
+                }}
                 name='category'
                 value={topic.toLowerCase()}>
                 {topic}
